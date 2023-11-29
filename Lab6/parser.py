@@ -10,10 +10,10 @@ def parse(text):
         id, interval, transfer, transfer_unit, bitrate, bitrate_unit, retr, cwnd = interval
 
         transfer = float(transfer)
-        transfer *= transfer_unit == 'G' if 1000 else 1
+        transfer *= 1000 if transfer_unit == 'G' else 1
 
         bitrate = float(bitrate)
-        bitrate *= bitrate_unit == 'G' if 1000 else 1
+        bitrate *= 1000 if bitrate_unit == 'G' else 1
 
         retr = int(retr)
         cwnd = int(cwnd)
